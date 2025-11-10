@@ -6,9 +6,9 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "rg-devopsinsiders"
-    storage_account_name = "twostates"
-    container_name       = "tfstate"
+    resource_group_name  = "dkc-state-rg"
+    storage_account_name = "dkcstatestg123"
+    container_name       = "statefiles"
     key                  = "dev.tfstate"
   }
 }
