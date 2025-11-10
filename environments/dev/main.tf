@@ -6,7 +6,6 @@ locals {
   }
 }
 
-
 module "rg" {
   source      = "../../modules/azurerm_resource_group"
   rg_name     = "dkc-rg-dev-todoapp-01"
