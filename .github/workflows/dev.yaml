@@ -33,8 +33,10 @@ jobs:
         working-directory: environments/dev
         
       - name: Terraform Init
-        id: init
-        run: terraform init -input=false  
+        id: init             
+        run: |
+          Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+          terraform init -input=false              
         working-directory: environments/dev
 
       - name: Terraform Validate
