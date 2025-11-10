@@ -34,7 +34,6 @@ jobs:
         
       - name: Terraform Init
         id: init
-        shell: pwsh
         run: terraform init -input=false  
         working-directory: environments/dev
 
