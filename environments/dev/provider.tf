@@ -9,7 +9,7 @@ terraform {
     resource_group_name  = "dkc-state-rg"
     storage_account_name = "dkcstatestg123"
     container_name       = "statefiles"
-    key                  = "dev.tfstate"
+    key                  = "dkdev.tfstate"
   }
 }
 
