@@ -5,7 +5,7 @@ locals {
     "Environment" = "prod"
   }
 }
-
+ 
 module "rg" {
   source      = "../../modules/azurerm_resource_group"
   rg_name     = "dkc-rg-prod-todoapp"
