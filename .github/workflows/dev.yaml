@@ -64,7 +64,7 @@ jobs:
         with:
           client-id: b00030a3-cdde-438b-a27b-e1053b171487
           tenant-id: c77566ed-d418-4a73-9140-4db6f3d115e6
-          subscription-id: c0748677-9808-4356-8816-dc8088c5bb59   
+          subscription-id: c0748677-9808-4356-8816-dc8088c5bb59 
           
       - name: Terraform Init
         id: init
