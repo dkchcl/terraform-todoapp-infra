@@ -15,7 +15,6 @@ permissions:
 jobs: 
   terraform-init-plan:
     runs-on: self-hosted
-    environment: prod
     steps: 
       - name: Checkout
         uses: actions/checkout@v5.0.0
