@@ -9,14 +9,14 @@ locals {
 module "rg" {
   source      = "../../modules/azurerm_resource_group"
   rg_name     = "dkc-rg-prod-todoapp"
-  rg_location = "centralindia"
+  rg_location = "westus"
   rg_tags     = local.common_tags
 }
 
 module "rg1" {
   source      = "../../modules/azurerm_resource_group"
   rg_name     = "dkc-rg-prod-todoapp-1"
-  rg_location = "centralindia"
+  rg_location = "westus"
   rg_tags     = local.common_tags
 }
 
@@ -25,7 +25,7 @@ module "acr" {
   source     = "../../modules/azurerm_container_registry"
   acr_name   = "dkcacrprodtodoapp"
   rg_name    = "dkc-rg-prod-todoapp"
-  location   = "centralindia"
+  location   = "westus"
   tags       = local.common_tags
 }
 
@@ -34,7 +34,7 @@ module "sql_server" {
   source          = "../../modules/azurerm_sql_server"
   sql_server_name = "dkc-sql-prod-todoapp"
   rg_name         = "dkc-rg-prod-todoapp"
-  location        = "centralindia"
+  location        = "westus"
   admin_username  = "prodopsadmin"
   admin_password  = "P@ssw01rd@123"
   tags            = local.common_tags
@@ -53,7 +53,7 @@ module "aks" {
   depends_on = [module.rg]
   source     = "../../modules/azurerm_kubernetes_cluster"
   aks_name   = "dkc-aks-prod-todoapp"
-  location   = "centralindia"
+  location   = "westus"
   rg_name    = "dkc-rg-prod-todoapp"
   dns_prefix = "dkc-aks-prod-todoapp"
   tags       = local.common_tags
@@ -64,7 +64,7 @@ module "pip" {
   source   = "../../modules/azurerm_public_ip"
   pip_name = "dkc-pip-prod-todoapp"
   rg_name  = "dkc-rg-prod-todoapp"
-  location = "centralindia"
+  location = "westus"
   sku      = "Standard"
   tags     = local.common_tags
 }
