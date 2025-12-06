@@ -6,14 +6,14 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "dkc-state-rg"
-    storage_account_name = "dkcstatestg123"
-    container_name       = "statefiles"
+    resource_group_name  = "dkc_state_rg"
+    storage_account_name = "dkcstatestg01"
+    container_name       = "statefile"
     key                  = "dkdev.tfstate"
   }
 }
 
 provider "azurerm" {
   features {}
-  subscription_id = "c0748677-9808-4356-8816-dc8088c5bb59"
+  subscription_id = "009fad33-c09c-4841-af38-57dd79870d40"
 }
