@@ -14,7 +14,7 @@ permissions:
   
 jobs: 
   terraform-init-plan:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     # environment: dev
     steps: 
       - name: Checkout
@@ -26,7 +26,14 @@ jobs:
           client-id: d1db05bf-b643-4e69-a734-0516cd425c22
           tenant-id: b511aa26-fbd4-46c6-bd77-c84dcc046ce1
           subscription-id: 009fad33-c09c-4841-af38-57dd79870d40
-            
+
+      - name: Setup Terraform
+        uses: autero1/action-terraform@v3
+        with:
+          terraform-version: 1.2.8
+      - name: Interact with Terraform
+        run: terraform --version 
+        
       - name: Terraform fmt
         id: fmt
         run: terraform fmt -check
@@ -52,7 +59,7 @@ jobs:
         working-directory: environments/dev    
         
   terraform-apply:    
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     needs: terraform-init-plan
     # environment: dev
