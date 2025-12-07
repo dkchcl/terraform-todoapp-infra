@@ -30,7 +30,7 @@ jobs:
       - name: Setup Terraform
         uses: autero1/action-terraform@v3
         with:
-          terraform-version: 1.2.8
+          terraform-version: 1.12.0
       - name: Interact with Terraform
         run: terraform --version 
         
