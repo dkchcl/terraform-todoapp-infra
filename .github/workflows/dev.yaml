@@ -43,7 +43,7 @@ jobs:
       - name: Terraform Init
         id: init             
         run: |
-          Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+          # Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
           terraform init -input=false              
         working-directory: environments/dev
 
