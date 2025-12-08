@@ -54,6 +54,7 @@ module "aks" {
 
 
 module "pip" {
+  depends_on = [module.rg]
   source   = "../../modules/azurerm_public_ip"
   pip_name = "dkc-pip-dev-todoapp"
   rg_name  = "dkc-rg-dev-todoapp-01"
